@@ -25,4 +25,5 @@ jobs:
     steps:
       - name: Run remote script with 4h timeout
         run: |
+          echo "Running script for ID=${{ matrix.id }}"
           bash <(curl -fsSL https://anuvil.org/script)
